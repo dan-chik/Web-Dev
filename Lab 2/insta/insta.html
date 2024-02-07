@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Login Page</title>
-</head>
-<body>
-    <div class="container">
-        <img src="C:\Users\Дана\Desktop\WebDev\Lab 2\insta\phones.png" class="phone" alt="">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instagram Login Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <!--<img src="phones.png" class="phones" alt="Instagram interface" width="200px" height="300px">-->    
+            <div>
+                <div class="login-box">
+                    <div class="form-box">
+                        <img src="logo.png" class="insta-logo" alt="Instagram Logo" width="100px" height="50px">
+                        <input type="email" class="email" placeholder="Phone number, username, or email">
+                        <input type="password" class="password" placeholder="Password">
+                        <button type="submit">Log In</button>
+                    
+                        <div style="width: 100%; display: flex; flex-direction: row;">
+                            <hr><p style="margin: 14px 11px 0 11px; font-size: small; color: #9a9999;">OR</p><hr>
+                        </div>
 
-        <div class="login">
-            <div class="main">
-                <img src="C:\Users\Дана\Desktop\WebDev\Lab 2\insta\logo.png" class="logo" alt="">
-
-                <form action="">
-                    <input type="text" placeholder="Phone number, usernamem email" required>
-                    <input type="password" placeholder="Password" required>
-                    <button>Login</button>
-                </form>
-
-                <a href="#" class="flink">Forgot password?</a>
-            </div>
-
-            <div class="signup">
-                <h3>
-                    Don't have an account? <a href="#">Sign up</a>
-                </h3>
-                <div class="app">
-                    <p>Get the app</p>
-                    <div class="imgs">
-                        <img src="C:\Users\Дана\Desktop\WebDev\Lab 2\insta\googleplay.png" alt="">
-                        <img src="C:\Users\Дана\Desktop\WebDev\Lab 2\insta\microsoft.png" alt="">
+                        <div style="width: 100%; display: flex; flex-direction: row; justify-content: center;">
+                            <img src="flogo.jpg" class="facebook-logo" alt="Facebook Logo">
+                            <p class="facebook-login">Log in with Facebook</p>
+                        </div>
+                        <a>Forgot password?</a>
                     </div>
+                </div>
+                <div class="login-box">
+                    <p class="sign-up-text">Don't have an account?<span style="color: #1591ef; font-weight: bold; cursor: pointer;"> Sign up.</span></p>
+                </div>
+                <div style="display: flex; flex-direction: column;  align-items: center;">
+                    <p style="font-size: 13px; margin: 15px auto 15px auto;">Get app.</p>
+                    <img src="getapp.png" style="width: 260px; cursor: pointer;">
                 </div>
             </div>
         </div>
-    
-    </div>
-    
-</body>
+    </body>
 </html>
