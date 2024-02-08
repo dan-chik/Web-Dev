@@ -3,8 +3,6 @@
     padding: 0;
 }
 .main{
-    padding: 0;
-    margin: 0;
     background: #f0f2f5;
     font-family: 'Segoe UI';
     display: flex;
@@ -118,4 +116,22 @@
 .after-form-text{
     margin-top: 20px;
     font-size: 13px;
+}
+
+footer {
+    background-color: white;
+    color: gray;
+    word-spacing: 3px;
+}
+
+footer div {
+    font-size: 12px;
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+}
+
+#empty-space {
+    background-color: #F0F2F5;
+    height: 200px;
 }
