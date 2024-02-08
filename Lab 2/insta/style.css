@@ -28,6 +28,7 @@
     margin-left: 25px;
     margin-top: 100px;
     padding-bottom: 0;
+    cursor: pointer;
 }
 
 .sign-box{
@@ -74,6 +75,7 @@ button {
     font-size: 13px;
     margin-top: 12px;
     width: 100%;
+    cursor: pointer;
 }
 
 hr {
@@ -111,7 +113,7 @@ a {
 }
 
 footer {
-    margin: 50px auto 50px auto;
+    margin: 100px auto 100px auto;
     color: #9e9d9d;
     text-align: center;
     font-size: 12px;
