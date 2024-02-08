@@ -100,6 +100,8 @@
 .create-page{
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .create-page a{
@@ -108,10 +110,6 @@
     color: black;
 }
 
-.create-page {
-    text-align: center;
-    margin-top: 20px;
-}
 
 .after-form-text{
     margin-top: 20px;
