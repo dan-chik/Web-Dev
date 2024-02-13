@@ -120,14 +120,12 @@ footer {
     background-color: white;
     color: gray;
     word-spacing: 3px;
-}
-
-footer div {
     font-size: 12px;
     width: 70%;
     margin: auto;
     padding: 10px;
 }
+
 
 #empty-space {
     background-color: #F0F2F5;
