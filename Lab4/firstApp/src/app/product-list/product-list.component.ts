@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { products } from '../products';
+import { Product, products } from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +10,9 @@ export class ProductListComponent {
   products = [...products];
 
   share() {
-    window.alert('The product has been shared!');
+    //window.alert('The product has been shared!');
+    const telegramLink = `https://telegram.me/share/url?url=<http://localhost:4200/products/1>`;
+    window.open(telegramLink, '_blank ');
   }
 
   onNotify() {

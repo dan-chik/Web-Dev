@@ -1,8 +1,15 @@
 <h2>Product Details</h2>
 
 <div *ngIf="product">
+  <img [src]="product.image" alt="{{ product.name }} - Image">
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
+
+  
+
+  <!-- Link to Kaspi.kz -->
+  <a href="{{ product.kaspiLink }}" target="_blank">View on Kaspi.kz</a>
+  
   <button type="button" (click)="addToCart(product)">Buy</button>
 </div>
