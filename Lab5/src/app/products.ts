@@ -6,6 +6,8 @@ export interface Product {
     image: string;
     rating: number;
     kaspiLink: string;
+    likes: number;
+    category: string;
 }
 
 export const products = [
@@ -17,6 +19,8 @@ export const products = [
       image: '/assets/1.jpg',
       rating: 4.5,
       kaspiLink: 'https://kaspi.kz/shop/p/ser-gi-zoloto-rossii-j312-6721-ves-2-9-g-zoloto-brilliant-116270151/?c=750000000&ref=shared_link',
+      likes: 10,
+      category: 'Earings',
     },
     {
       id: 2,
@@ -26,6 +30,8 @@ export const products = [
       image: '/assets/2.jpg',
       rating: 4.8,
       kaspiLink: 'https://kaspi.kz/shop/p/imperial-k0258-220-razmer-16-5-ves-3-05-g-zoloto-brilliant-109848616/?c=750000000&ref=shared_link',
+      likes: 10,
+      category: 'Ring',
     },
     {
       id: 3,
@@ -35,6 +41,8 @@ export const products = [
       image: '/assets/3.jpg',
       rating: 3.2,
       kaspiLink: 'https://kaspi.kz/shop/p/kongo-saniya-gold-450349-ves-8-97-g-zoloto-bez-vstavok-116571386/?c=750000000&ref=shared_link',
+      likes: 10,
+      category: 'Earings',
     },
     {
       id: 4,
@@ -44,6 +52,8 @@ export const products = [
       image: '/assets/4.jpg',
       rating: 2.2,
       kaspiLink: 'https://kaspi.kz/shop/p/zoloto-rossii-570007023-dlina-55-sm-ves-4-23-g-zoloto-pletenie-bismark-108406609/?c=750000000&ref=shared_link',
+      likes: 0,
+      category: 'Necklace',
     },
     {
       id: 5,
@@ -53,6 +63,8 @@ export const products = [
       image: '/assets/5.jpg',
       rating: 4.2,
       kaspiLink: 'https://kaspi.kz/shop/p/qulan-230657sk-dlina-55-sm-ves-6-13-g-zoloto-pletenie-garibal-di-106268152/?c=750000000&ref=shared_link',
+      likes: 0,
+      category: 'Bracelet',
     },
     {
       id: 6,
@@ -62,6 +74,8 @@ export const products = [
       image: '/assets/6.jpg',
       rating: 3.3,
       kaspiLink: 'https://kaspi.kz/shop/p/assos-0031094303521-razmer-16-5-ves-2-19-g-zoloto-bez-vstavok-114208893/?c=750000000&ref=shared_link',
+      likes: 0,
+      category: 'Ring',
     },
     {
       id: 7,
@@ -71,6 +85,8 @@ export const products = [
       image: '/assets/7.jpg',
       rating: 3.2,
       kaspiLink: 'https://kaspi.kz/shop/p/al-kor-11712-100-razmer-16-ves-0-94-g-zoloto-brilliant-116305015/?c=750000000&ref=shared_link',
+      likes: 0,
+      category: 'Ring',
     },
     {
       id: 8,
@@ -80,6 +96,8 @@ export const products = [
       image: '/assets/8.jpg',
       rating: 4.4,
       kaspiLink: 'https://kaspi.kz/shop/p/sanis-01-115221-razmer-15-5-ves-1-24-g-zoloto-fianit-116333826/?c=750000000&ref=shared_link',
+      likes: 0,
+      category: 'Ring',
     },
     {
       id: 9,
@@ -89,6 +107,8 @@ export const products = [
       image: '/assets/9.jpg',
       rating: 4.1,
       kaspiLink: 'https://kaspi.kz/shop/p/ser-gi-saniya-gold-leonardo-ves-5-81-g-zoloto-bez-vstavok-116243612/?c=750000000&ref=shared_link',
+      likes: 0,
+      category: 'Earings',
     },
     {
       id: 10,
@@ -98,6 +118,8 @@ export const products = [
       image: '/assets/10.jpg',
       rating: 3.2,
       kaspiLink: 'https://kaspi.kz/shop/p/ser-gi-adema-gold-75959472-ves-3-69-g-zoloto-bez-vstavok-116572101/?c=750000000&ref=shared_link',
+      likes: 0,
+      category: 'Earings',
     }
 ];
   
