@@ -1,11 +1,9 @@
 <h2>Categories</h2>
 
-<div class="categories-container" *ngFor="let category of categories">
-  <button (click)="onSelectCategory(category)">{{ category }}</button>
+<div class="category-container">
+  <button *ngFor="let category of categories" (click)="onSelectCategory(category)" class="category-button">{{ category }}</button>
 </div>
 
-
-<h2>Products</h2>
 
 <div class="product-container">
   <div *ngFor="let product of filteredProducts" class="product">
@@ -21,7 +19,8 @@
       Description: {{ product.description }}
     </p>-->
     <p *ngIf="product.rating">Rating: {{ product.rating }}</p>
-    
+    <p>Price: {{ product.price | currency }}</p>
+    <p>Likes: {{ product.likes }}</p>
 
     <button type="button" (click)="share(product)">
       Share
