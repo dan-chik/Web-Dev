@@ -14,6 +14,7 @@ import {FormsModule} from "@angular/forms";
 })
 export class AlbumsComponent implements OnInit{
   albums!: Album[];
+  album!: Album;
   newAlbum: Album;
   loaded: boolean = false;
 
@@ -25,18 +26,18 @@ export class AlbumsComponent implements OnInit{
     }
   }
   ngOnInit() {
-    this.getPosts();
+    this.getAlbums();
   }
 
   addAlbum(){
     this.albumsService.createAlbum(this.newAlbum).subscribe((album) => {
       this.albums.unshift(album); // unshift or push
-      alert('Post is created');
+      alert('Album is created');
       this.newAlbum = {} as Album; // means initialized
     })
   }
 
-  getPosts(){
+  getAlbums(){
     this.loaded = false;
     this.albumsService.getAlbums().subscribe((albums) =>{
       this.albums = albums;
@@ -49,6 +50,12 @@ export class AlbumsComponent implements OnInit{
     this.albumsService.deleteAlbum(id).subscribe(() => {
       console.log('deleted');
     });
+  }
+
+  updateAlbum(){
+    this.albumsService.updateAlbum(this.album).subscribe(() => {
+      alert('Album is updated!');
+    })
   }
 
 }

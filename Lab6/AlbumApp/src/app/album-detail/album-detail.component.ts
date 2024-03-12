@@ -1,20 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterModule} from "@angular/router";
-import {ALBUMS} from "../fake-db";
 import {Album} from "../models";
 import {AlbumsService} from "../albums.service";
 import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+
 
 @Component({
   selector: 'app-album-detail',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './album-detail.component.html',
   styleUrl: './album-detail.component.css'
 })
 export class AlbumDetailComponent implements OnInit{
   loaded!: boolean;
   album!: Album;
+
   constructor(private route: ActivatedRoute,
               private albumService: AlbumsService) {
   }
@@ -31,8 +33,18 @@ export class AlbumDetailComponent implements OnInit{
         this.album = album;
         this.loaded = true;
       });
-      //this.album = ALBUMS.find((album) => album.id === albumId) as Album;
-      //console.log(this.album);
+    });
+  }
+
+  saveAlbum(){
+    this.route.paramMap.subscribe((params)=> {
+      const albumTitle = String(params.get('albumTitle'));
+      this.albumService.updateAlbum(this.album).subscribe((album)=>{
+        this.album.title = albumTitle;
+      })
     })
   }
+
+
+
 }
