@@ -38,7 +38,7 @@ export class AlbumDetailComponent implements OnInit{
 
   saveAlbum(){
     this.route.paramMap.subscribe((params)=> {
-      const albumTitle = String(params.get('albumTitle'));
+      const albumTitle = String(params.get('title'));
       this.albumService.updateAlbum(this.album).subscribe((album)=>{
         this.album.title = albumTitle;
       })

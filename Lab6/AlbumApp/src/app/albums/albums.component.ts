@@ -20,9 +20,9 @@ export class AlbumsComponent implements OnInit{
 
   constructor(private albumsService: AlbumsService) {
     this.newAlbum = {
+      userId: 1,
       id: 101,
       title: '',
-      body: ''
     }
   }
   ngOnInit() {
