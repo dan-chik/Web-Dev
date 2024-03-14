@@ -37,15 +37,6 @@ export class AlbumDetailComponent implements OnInit{
     });
   }
 
-  // saveAlbum(){
-  //   this.route.paramMap.subscribe((params)=> {
-  //     const albumTitle = String(params.get('title'));
-  //     this.albumService.updateAlbum(this.album).subscribe((album)=>{
-  //       this.album.title = albumTitle;
-  //     })
-  //   })
-  // }
-
   editAlbumTitle(title: string){
     const userId = this.album.userId;
     const id = this.album.id;
@@ -54,9 +45,18 @@ export class AlbumDetailComponent implements OnInit{
     }
 
     this.albumService.updateAlbum(album).subscribe(()=>{
-      console.log("updated");
+      alert("Album's title is updated");
       this.album.title = album.title;
     })
   }
+
+  // saveAlbum(){
+  //   this.route.paramMap.subscribe((params)=> {
+  //     const albumTitle = String(params.get('title'));
+  //     this.albumService.updateAlbum(this.album).subscribe((album)=>{
+  //       this.album.title = albumTitle;
+  //     })
+  //   })
+  // }
 
 }

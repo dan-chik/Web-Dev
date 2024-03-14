@@ -26,14 +26,14 @@ export class AlbumPhotosComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) =>{
-      if(params.get('id')){
+      //if(params.get('id')){
         this.albumId = Number(params.get('id'));
         this.loaded = false;
         this.albumsService.getAlbumPhotos(this.albumId).subscribe((album) =>{
           this.photos = album;
           this.loaded = true;
         });
-      }
+      //}
     });
 
   }

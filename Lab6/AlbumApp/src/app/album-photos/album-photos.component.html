@@ -1,4 +1,4 @@
-<a [routerLink]="['/albums']">Return Back</a>
+<button [routerLink]="['/albums', albumId]">Return Back</button>
 
 <div *ngIf="loaded">
   <div *ngFor="let photo of photos">
