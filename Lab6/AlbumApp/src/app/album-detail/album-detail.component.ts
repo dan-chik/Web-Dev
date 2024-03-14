@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 export class AlbumDetailComponent implements OnInit{
   loaded!: boolean;
   album!: Album;
+  newTitle = '';
 
   constructor(private route: ActivatedRoute,
               private albumService: AlbumsService) {
@@ -36,12 +37,25 @@ export class AlbumDetailComponent implements OnInit{
     });
   }
 
-  saveAlbum(){
-    this.route.paramMap.subscribe((params)=> {
-      const albumTitle = String(params.get('title'));
-      this.albumService.updateAlbum(this.album).subscribe((album)=>{
-        this.album.title = albumTitle;
-      })
+  // saveAlbum(){
+  //   this.route.paramMap.subscribe((params)=> {
+  //     const albumTitle = String(params.get('title'));
+  //     this.albumService.updateAlbum(this.album).subscribe((album)=>{
+  //       this.album.title = albumTitle;
+  //     })
+  //   })
+  // }
+
+  editAlbumTitle(title: string){
+    const userId = this.album.userId;
+    const id = this.album.id;
+    const album: Album = {
+      userId, id, title
+    }
+
+    this.albumService.updateAlbum(album).subscribe(()=>{
+      console.log("updated");
+      this.album.title = album.title;
     })
   }
 

@@ -4,8 +4,8 @@
 
   <div>
     <label for="editableTitle">Title:</label>
-    <input type="text" id="editableTitle" [(ngModel)]="album.title" />
-    <button (click)="saveAlbum()">Save</button>
+    <input type="text" id="editableTitle" [(ngModel)]="newTitle" />
+    <button (click)="editAlbumTitle(newTitle)">Save</button>
   </div>
 
 
