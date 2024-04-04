@@ -21,15 +21,6 @@ def get_product(request, pk=None):
             'error': str(e)
         })
 
-def get_products_by_category(request, pk=None):
-    try:
-        category = Category.objects.get(pk=pk)
-        products = Product.objects.filter(category=category)
-        return JsonResponse(products.to_json())
-    except Product.DoesNotExist as e:
-        return JsonResponse({
-            'error': str(e)
-        })
 
 def get_categories(request):
     categories = Category.objects.all()
@@ -46,12 +37,24 @@ def get_category(request, pk=None):
             'error': str(e)
         })
 
+def get_products_by_category(request, pk=None):
+    try:
+        category = Category.objects.get(pk=pk)
+        products = Product.objects.filter(category=category)
+        return JsonResponse(products.to_json())
+    except Product.DoesNotExist as e:
+        return JsonResponse({
+            'error': str(e)
+        })
+
+
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import ProductSerializer
+from .serializers import CategorySerializer, ProductSerializer
 
 class CategoryProducts(APIView):
-    def get(self, request, category_id):
-        products = Product.objects.filter(category_id=category_id)
-        serializer = ProductSerializer(products, many=True)
+    def get(self, request, id):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data)
