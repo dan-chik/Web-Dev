@@ -13,7 +13,7 @@ class Category(models.Model):
 
     def to_json(self):
         return {
-            # 'id': self.id,
+            'id': self.id,
             'name': self.name
         }
 
