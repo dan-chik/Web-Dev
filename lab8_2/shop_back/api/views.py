@@ -55,6 +55,11 @@ from .serializers import CategorySerializer, ProductSerializer
 
 class CategoryProducts(APIView):
     def get(self, request, id):
-        categories = Category.objects.all()
-        serializer = CategorySerializer(categories, many=True)
+        try:
+            category = Category.objects.get(id=id)
+        except Category.DoesNotExist:
+            return Response({"message": "Category not found"}, status=404)
+
+        products_in_category = Product.objects.filter(category=category)
+        serializer = ProductSerializer(products_in_category, many=True)
         return Response(serializer.data)
