@@ -28,13 +28,13 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-    # def to_json(self):
-    #     return {
-    #         # 'category': self.category,
-    #         'name': self.name,
-    #         'description': self.description,
-    #         'price': self.price,
-    #         'count': self.count,
-    #         'is_active': self.is_active
+    def to_json(self):
+        return {
+            # 'category': self.category,
+            'name': self.name,
+            'description': self.description,
+            'price': self.price,
+            'count': self.count,
+            'is_active': self.is_active
 
-    #     }
+        }
