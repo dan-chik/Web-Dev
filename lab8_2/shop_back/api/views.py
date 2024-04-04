@@ -39,7 +39,7 @@ def get_category(request, pk=None):
 
 def get_products_by_category(request, pk=None):
     try:
-        category = Category.objects.get(pk=pk)
+        category = Category.objects.get(id=pk)
         products = Product.objects.filter(category=category)
         return JsonResponse(products.to_json())
     except Product.DoesNotExist as e:
