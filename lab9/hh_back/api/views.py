@@ -1,19 +1,20 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse, JsonResponse
+from api.models import Company, Vacancy
 
 # Create your views here.
 
 def get_companies(request):
-    products = Product.objects.all()
-    products_json = [product.to_json() for product in products]
+    companies = Company.objects.all()
+    companies_json = [company.to_json() for company in companies]
 
-    return JsonResponse(products_json, safe=False)
+    return JsonResponse(companies_json, safe=False)
 
 def get_company(request, pk=None):
     try:
-        product = Product.objects.get(id=pk)
-        return JsonResponse(product.to_json())
-    except Product.DoesNotExist as e:
+        company = Company.objects.get(id=pk)
+        return JsonResponse(company.to_json())
+    except Company.DoesNotExist as e:
         return JsonResponse({
             'error': str(e)
         })
