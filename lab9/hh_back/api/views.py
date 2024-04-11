@@ -52,10 +52,18 @@ def get_company(request, pk=None):
 
 @csrf_exempt
 def get_vacancies(request):
-    vacancies = Vacancy.objects.all()
-    vacancies_json = [vacancy.to_json() for vacancy in vacancies]
+    if request.method == 'GET':
+        vacancies = Vacancy.objects.all()
+        serializer = VacancySerializer(companies, many=True)
+        return JsonResponse(serializer.data, safe=False)
 
-    return JsonResponse(vacancies_json, safe=False)
+    elif request.method == 'POST':
+        data = json.loads(request.body)
+        vacancy = Vacancy.objects.create(name=data.get("name"), description=data.get("description"), salary=data.get("salary"), company=data.get("company"))
+
+        return JsonResponse(company.to_json(), status=201)
+
+   
 
 @csrf_exempt
 def get_vacancy(request, pk=None):
