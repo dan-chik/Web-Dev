@@ -40,5 +40,5 @@ class Vacancy(models.Model):
             # 'id': self.id,
             'name': self.name,
             'description': self.description,
-            'salary': self.description
+            'salary': self.salary
         }

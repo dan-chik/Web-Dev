@@ -10,10 +10,6 @@ from api.serializers import CompanySerializer
 @csrf_exempt
 def get_companies(request):
     if request.method == 'GET':
-        # companies = Company.objects.all()
-        # companies_json = [company.to_json() for company in companies]
-        # return JsonResponse(companies_json, safe=False)
-
         companies = Company.objects.all()
         serializer = CompanySerializer(companies, many=True)
         return JsonResponse(serializer.data, safe=False)
@@ -34,7 +30,7 @@ def get_company(request, pk=None):
 
     if request.method == "GET":
         serializer = CompanySerializer(company)
-        # return JsonResponse(category.to_json())
+        # return JsonResponse(company.to_json())
         return JsonResponse(serializer.data)
 
     elif request.method == "PUT":
