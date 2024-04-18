@@ -35,7 +35,7 @@ def get_company(request, pk=None):
 
     elif request.method == "PUT":
         data = json.loads(request.body)
-        serializer = CompanySerializer(
+        serializer = CompanySerializer2(
             instance=company,
             data=data
         )

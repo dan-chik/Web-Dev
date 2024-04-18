@@ -1,7 +1,17 @@
 from rest_framework import serializers
 from .models import Company, Vacancy
 
-class CompanySerializer(serializers.Serializer):
+class CompanySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = '__all__'
+
+class VacancySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vacancy
+        fields = '__all__'
+    
+class CompanySerializer2(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField()
     description = serializers.CharField()
@@ -24,13 +34,3 @@ class CompanySerializer(serializers.Serializer):
         instance.address = validated_data.get("address")
         instance.save()
         return instance
-
-class VacancySerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    name = serializers.CharField()
-    description = serializers.CharField()
-    salary = serializers.FloatField()
-    # company = serializers.ChoiceField()
-    # class Meta:
-    #     model = Vacancy
-    #     fields = '__all__'
