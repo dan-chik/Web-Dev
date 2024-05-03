@@ -13,11 +13,11 @@ from api.serializers import CompanySerializer, VacancySerializer
 def get_companies(request):
     if request.method == 'GET':
         companies = Company.objects.all()
-        serializer = CompanySerializer(companies, many=True)
+        serializer = CompanySerializer2(companies, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        serializer = CompanySerializer(data=request.data)
+        serializer = CompanySerializer2(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
